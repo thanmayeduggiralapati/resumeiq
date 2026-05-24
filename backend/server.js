@@ -6,7 +6,10 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: ["https://creative-pithivier-776097.netlify.app", "http://localhost:3000"],
+    credentials: true,
+}));
 app.use(express.json());
 
 const authRoutes = require("./routes/authRoutes");
